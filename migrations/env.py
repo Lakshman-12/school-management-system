@@ -19,6 +19,7 @@ from app.modules.teachers import models as teacher_models
 from app.modules.classes.models import SchoolClass
 from app.modules.subjects.models import Subject
 from app.modules.teacher_assignments.models import TeacherAssignment
+from app.modules.parents.models import Parent
 from app.modules.students.models import Student
 
 # this is the Alembic Config object, which provides
