@@ -111,3 +111,20 @@ TeacherUser = Annotated[
     User,
     Depends(require_role(UserRole.TEACHER)),
 ]
+
+StudentUser = Annotated[
+    User,
+    Depends(require_role(UserRole.STUDENT)),
+]
+
+
+ParentUser = Annotated[
+    User,
+    Depends(require_role(UserRole.PARENT)),
+]
+
+
+AdminOrTeacher = Annotated[
+    User,
+    Depends(require_role(UserRole.ADMIN, UserRole.TEACHER)),
+]

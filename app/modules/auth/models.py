@@ -14,6 +14,7 @@ class UserRole(str, Enum):
     PARENT = "parent"
 
 
+
 class User(Base):
     __tablename__ = "users"
 

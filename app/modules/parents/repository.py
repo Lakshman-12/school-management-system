@@ -56,6 +56,7 @@ class ParentRepository:
         stmt = stmt.offset(offset).limit(limit)
         result = await self.db.execute(stmt)
         return list(result.scalars().all())
+        
 
     async def update(self, parent: Parent, update_data: dict) -> Parent:
         try:

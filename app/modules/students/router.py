@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Query, status
 
 from app.db.session import DB
-from app.modules.auth.dependencies import AdminUser, CurrentUser
+from app.modules.auth.dependencies import AdminUser, CurrentUser, AdminOrTeacher
 from app.modules.students.schemas import (
     StudentCreate,
     StudentDetailResponse,
@@ -37,7 +37,7 @@ async def create_student(
 )
 async def get_students(
     db: DB,
-    current_user: CurrentUser,
+    current_user: AdminOrTeacher,
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1, le=100),
     class_id: int | None = Query(None),

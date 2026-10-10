@@ -36,7 +36,7 @@ async def create_parent(
 )
 async def get_parents(
     db: DB,
-    current_user: CurrentUser,
+    current_user: AdminUser,
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1, le=100),
     is_active: bool | None = Query(None),
